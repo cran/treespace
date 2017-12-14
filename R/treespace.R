@@ -1,7 +1,7 @@
 #'
 #' Phylogenetic tree exploration
 #'
-#' Compares phylogenetic trees and maps them into a small number of dimensions for easy visualisation and identification of clusters.
+#' Compares phylogenetic trees using a choice of metrics / measures, and maps their pairwise distances into a small number of dimensions for easy visualisation and identification of clusters.
 #'
 #' @param x an object of the class multiPhylo
 #' @param method the method for summarising the tree as a vector.
@@ -68,6 +68,7 @@
 #'
 #' @export
 treespace <- function(x, method="treeVec", nf=NULL, return.tree.vectors=FALSE, ...){
+  
     ## CHECKS ##
     if(!inherits(x, "multiPhylo")) stop("x should be a multiphylo object")
     num_trees <- length(x) # number of trees
@@ -122,6 +123,8 @@ treespace <- function(x, method="treeVec", nf=NULL, return.tree.vectors=FALSE, .
     else if(method=="wRF"){
       names(x) <- NULL # temporary fix to avoid wRF error
       D <- wRF.dist(x)
+      ## make the distance Euclidean
+      D <- ade4::cailliez(D, print=FALSE)
     }
     else if(method=="KF"){
       D <- KF.dist(x)

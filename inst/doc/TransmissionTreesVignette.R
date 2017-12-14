@@ -127,6 +127,6 @@ names(med)
 med$median
 
 ## ----wiwMedTreePlot------------------------------------------------------
-medgraph <- graph_from_edgelist(combinedLists[[med$median]])
+medgraph <- graph_from_edgelist(combinedLists[[med$median[[1]]]])
 plot(medgraph)
 
