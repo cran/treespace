@@ -4,8 +4,8 @@
 \alias{treespace}
 \title{Phylogenetic tree exploration}
 \usage{
-treespace(x, method = "treeVec", nf = NULL, return.tree.vectors = FALSE,
-  ...)
+treespace(x, method = "treeVec", nf = NULL, lambda = 0,
+  return.tree.vectors = FALSE, ...)
 }
 \arguments{
 \item{x}{an object of the class multiPhylo}
@@ -26,6 +26,8 @@ others inherited from \code{distTips} in \code{adephylo}:
 }}
 
 \item{nf}{the number of principal components to retain}
+
+\item{lambda}{a number in [0,1] which specifies the extent to which topology (default, with lambda=0)  or branch lengths (lambda=1) are emphasised in the Kendall Colijn metric.}
 
 \item{return.tree.vectors}{option to also return the tree vectors. Note that this can use a lot of memory so defaults to \code{FALSE}.}
 
