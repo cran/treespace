@@ -12,7 +12,7 @@
 
 <meta name="author" content="Michelle Kendall, Thibaut Jombart" />
 
-<meta name="date" content="2018-01-23" />
+<meta name="date" content="2018-02-21" />
 
 <title>treespace worked example: Dengue trees</title>
 
@@ -103,7 +103,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">treespace worked example: Dengue trees</h1>
 <h4 class="author"><em>Michelle Kendall, Thibaut Jombart</em></h4>
-<h4 class="date"><em>2018-01-23</em></h4>
+<h4 class="date"><em>2018-02-21</em></h4>
 
 
 
@@ -113,7 +113,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Load the required packages:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;treespace&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;phangorn&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;adegenet&quot;</span>)</code></pre></div>
+<span class="kw">library</span>(<span class="st">&quot;adegenet&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;rgl&quot;</span>)</code></pre></div>
 <p>Load BEAST trees:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(DengueTrees)</code></pre></div>
 <p>We load a random sample of 500 of the trees (from the second half of the posterior) produced using BEAST v1.8 with xml file 4 from Drummond and Rambaut (2007). It uses the standard GTR + Gamma + I substitution model with uncorrelated lognormal-distributed relaxed molecular clock. Each tree has 17 tips.</p>

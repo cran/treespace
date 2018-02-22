@@ -11,7 +11,7 @@ vignette: >
 
 
 ```{r setup, echo=FALSE}
-# set global chunk options: images will be 7x5 inches
+# set global chunk options: images will be 7x7 inches
 knitr::opts_chunk$set(fig.width=7, fig.height=7, fig.path="figs/", cache=FALSE, dpi=96)
 options(digits = 4)
 library("rgl")
@@ -384,7 +384,7 @@ Authors:
 
 * [Thibaut Jombart](https://sites.google.com/site/thibautjombart/)
 
-* [Michelle Kendall](http://www.imperial.ac.uk/people/m.kendall)
+* [Michelle Kendall](https://michellekendall.github.io/)
 
 Contributors:
 
@@ -394,4 +394,4 @@ Contributors:
 
 Maintainer of the CRAN version:
 
-* [Michelle Kendall](http://www.imperial.ac.uk/people/m.kendall)
+* [Michelle Kendall](https://michellekendall.github.io/)

@@ -17,7 +17,7 @@
 #' indTree1 <- read.tree(text="(((c4,c3),(c2,c1)),((b1,b2),((a3,a2),a1)));")
 #' plot(indTree1)
 #' 
-#' #' # create data frame linking categories with individuals
+#' # create data frame linking categories with individuals
 #' df <- cbind(c(rep("A",3),rep("B",2),rep("C",4)),sort(indTree1$tip.label))
 #' 
 #' treeConcordance(catTree,indTree1,df)
@@ -46,6 +46,9 @@ treeConcordance <- function(catTree,indTree,df) {
   catTree_pairs <- catTree_leaves * (catTree_leaves-1)/2
   indTree_pairs <- indTree_leaves * (indTree_leaves -1)/2
 
+  # avoid unnecessary computation by reducing df to unique rows
+  df <- unique(df)
+  
   # function to find category corresponding to individual:
   sigma <- function(g) {
     s_row <- which(df[,2]==g)
