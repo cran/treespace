@@ -1,6 +1,6 @@
 ## ----setup, echo=FALSE---------------------------------------------------
 # set global chunk options: images will be 7x7 inches
-knitr::opts_chunk$set(fig.width=7, fig.height=7, fig.path="figs/", cache=FALSE, dpi=96)
+knitr::opts_chunk$set(fig.width=7, fig.height=7, cache=FALSE, dpi=96)
 options(digits = 4)
 library("rgl")
 knitr::knit_hooks$set(webgl=hook_webgl)
@@ -81,11 +81,11 @@ plot3d(wm.groves$treespace$pco$li[,1],
        xlab="", ylab="", zlab="")
 
 ## ----shiny_figures, echo=FALSE, fig.retina = NULL------------------------
-knitr::include_graphics("figs/treespace3d.png", dpi=72)
+knitr::include_graphics("treespace3d.png", dpi=72)
 
-knitr::include_graphics("figs/treespaceTree.png", dpi=72)
+knitr::include_graphics("treespaceTree.png", dpi=72)
 
-knitr::include_graphics("figs/treespaceDensiTree.png", dpi=72)
+knitr::include_graphics("treespaceDensiTree.png", dpi=72)
 
 ## ----woodmiceMedian------------------------------------------------------
 # get first median tree
@@ -128,7 +128,7 @@ wm3.groves <- findGroves(woodmiceTrees,nf=3,nclust=6,emphasise.tips=c("No1007S",
 plotGrovesD3(wm3.groves)
 
 ## ----figure_construction, echo=FALSE, fig.retina = NULL------------------
-knitr::include_graphics("figs/construction.png", dpi=72)
+knitr::include_graphics("construction.png", dpi=72)
 
 ## ----treevec-------------------------------------------------------------
 # generate a random tree:
