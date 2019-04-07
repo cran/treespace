@@ -96,6 +96,7 @@ colnames(MRCAdepths) <- c("tip1","tip2","Tree 1", "Tree 2")
 MRCAdepths
 
 ## ----six_comparable_trees, fig.height=12---------------------------------
+suppressWarnings(RNGversion("3.5.0"))
 set.seed(948)
 # set colour scheme
 pal2 <- brewer.pal(8,"Dark2")

@@ -51,6 +51,7 @@ wiwTreeDist(matList, sampled=1:6) # find the Euclidean distances between these m
 wiwTreeDist(matList, sampled=4:6)
 
 ## ----trees1000-----------------------------------------------------------
+suppressWarnings(RNGversion("3.5.0"))
 set.seed(123)
 num <- 500
 

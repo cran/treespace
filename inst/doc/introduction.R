@@ -23,6 +23,7 @@ library("rgl")
 
 ## ----treespace-----------------------------------------------------------
 # generate list of trees
+suppressWarnings(RNGversion("3.5.0"))
 set.seed(1)
 x <- rmtree(10, 20)
 names(x) <- paste("tree", 1:10, sep = "")

@@ -12,6 +12,7 @@ library("adegenet")
 data(DengueTrees)
 
 ## ----sample_BEAST_trees--------------------------------------------------
+suppressWarnings(RNGversion("3.5.0"))
 set.seed(123)
 BEASTtrees <- DengueTrees[sample(1:length(DengueTrees),200)]
 
