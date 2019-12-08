@@ -7,6 +7,7 @@
 #' @param df data frame specifying to which category each individual belongs. Each row gives an individual (column 2) and its corresponding category (column 1)
 #'
 #' @import ape
+#' @importFrom methods is
 #'
 #' @examples
 #' # create an example category tree
@@ -38,6 +39,10 @@
 #'
 #' @export
 treeConcordance <- function(catTree,indTree,df) {
+    
+  if(!is(catTree,"phylo")) stop("The category-level tree catTree must be of class phylo")
+  if(!is(indTree,"phylo")) stop("The individual-level tree indTree must be of class phylo")
+    
   # find the number of pairs of different individuals:
   catTree_leaves <- length(catTree$tip.label)
   indTree_leaves <- length(indTree$tip.label)

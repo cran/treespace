@@ -8,6 +8,7 @@
 #' @import ape
 #' @importFrom combinat combn
 #' @importFrom Rcpp evalCpp
+#' @importFrom methods is
 #'
 #' @examples
 #' tree <- rtree(10)
@@ -16,7 +17,7 @@
 #'
 #' @export
 tipsMRCAdepths <- function(tree) {
-  if(class(tree)!="phylo") stop("Tree should be of class phylo")
+  if(!is(tree,"phylo")) stop("Tree should be of class phylo")
   if(!is.rooted(tree)) stop("Function is for rooted trees only")
     root <- min(tree$edge[,1])
     if (length(split(tree$edge[,2], factor(tree$edge[,1], root))[[1]]) < 2) stop("Tree root must have at least two descendants")
