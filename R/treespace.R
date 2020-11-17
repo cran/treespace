@@ -6,21 +6,20 @@
 #' @param x an object of the class multiPhylo
 #' @param method the method for summarising the tree as a vector.
 #' Choose from:
-#' \code{treeVec} (default) the Kendall Colijn metric vector
-#' \code{BHV} the Billera, Holmes Vogtmann metric using \code{dist.multiPhylo} from package \code{distory}
-#' \code{KF} the Kuhner Felsenstein metric (branch score distance) using \code{KF.dist} from package \code{phangorn} (Note: this considers the trees as unrooted)
-#' \code{RF} the Robinson Foulds metric using \code{RF.dist} from package \code{phangorn} (Note: this considers the trees as unrooted and issues a corresponding warning)
-#' \code{wRF} the weighted Robinson Foulds metric using \code{wRF.dist} from package \code{phangorn} (Note: this considers the trees as unrooted and issues a corresponding warning)
-#' \code{nNodes} the Steel & Penny tip-tip path difference metric, (topological, ignoring branch lengths), using \code{path.dist} from package \code{phangorn} (Note: this considers the trees as unrooted)
-#' \code{patristic} the Steel & Penny tip-tip path difference metric, using branch lengths, calling \code{path.dist} from package \code{phangorn} (Note: this considers the trees as unrooted)
-#' others inherited from \code{distTips} in \code{adephylo}:
 #' \itemize{
-#' \item \code{Abouheif}: performs Abouheif's test. See Pavoine et al. (2008) and \code{adephylo}.
-#' \item \code{sumDD}: sum of direct descendants of all nodes on the path, related to Abouheif's test. See \code{adephylo}.
+#' \item \code{treeVec} (default) the Kendall Colijn metric vector (for rooted trees)
+#' \item \code{BHV} the Billera, Holmes Vogtmann metric using \code{dist.multiPhylo} from package \code{distory} (for rooted trees)
+#' \item \code{KF} the Kuhner Felsenstein metric (branch score distance) using \code{KF.dist} from package \code{phangorn} (considers the trees unrooted)
+#' \item \code{RF} the Robinson Foulds metric using \code{RF.dist} from package \code{phangorn} (considers the trees unrooted)
+#' \item \code{wRF} the weighted Robinson Foulds metric using \code{wRF.dist} from package \code{phangorn} (considers the trees unrooted)
+#' \item \code{nNodes} the Steel & Penny tip-tip path difference metric, (topological, ignoring branch lengths), using \code{path.dist} from package \code{phangorn} (considers the trees unrooted)
+#' \item \code{patristic} the Steel & Penny tip-tip path difference metric, using branch lengths, calling \code{path.dist} from package \code{phangorn} (considers the trees unrooted)
+#' \item \code{Abouheif}: performs Abouheif's test, inherited from \code{distTips} in \code{adephylo}. See Pavoine et al. (2008) and \code{adephylo}.
+#' \item \code{sumDD}: sum of direct descendants of all nodes on the path, related to Abouheif's test, inherited from \code{distTips} in \code{adephylo}.
 #' }
 #' @param nf the number of principal components to retain
 #' @param lambda a number in [0,1] which specifies the extent to which topology (default, with lambda=0)  or branch lengths (lambda=1) are emphasised in the Kendall Colijn metric.
-#' @param return.tree.vectors option to also return the tree vectors. Note that this can use a lot of memory so defaults to \code{FALSE}.
+#' @param return.tree.vectors if using the Kendall Colijn metric, this option will return the tree vectors as part of the output. Note that this can use a lot of memory so defaults to \code{FALSE}.
 #' @param processors value (default 1) to be passed to mcmapply specifying the number of cores to use. Must be 1 on Windows (see \code{mcmapply} for more details).
 #' @param ... further arguments to be passed to \code{method}.
 #'
@@ -28,7 +27,7 @@
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'
 #' @import ape
-#' @importFrom ade4 dudi.pco cailliez
+#' @importFrom ade4 dudi.pco cailliez is.euclid
 #' @importFrom adephylo distTips
 #' @importFrom distory dist.multiPhylo
 #' @importFrom fields rdist
@@ -120,21 +119,30 @@ treespace <- function(x, method="treeVec", nf=NULL, lambda=0, return.tree.vector
     }
     else if(method=="RF"){
       D <- RF.dist(x)
-      ## make the distance Euclidean
-      D <- ade4::cailliez(D, print=FALSE)
+      ## make the distance Euclidean if it isn't already
+      if (!ade4::is.euclid(D))  {
+        warning("Distance matrix is not Euclidean; making it Euclidean using ade4::cailliez")
+        D <- ade4::cailliez(D, print=FALSE)
+      }
     }
     else if(method=="wRF"){
       D <- wRF.dist(x)
-      ## make the distance Euclidean
-      D <- ade4::cailliez(D, print=FALSE)
+      ## make the distance Euclidean if it isn't already
+      if (!ade4::is.euclid(D))  {
+        warning("Distance matrix is not Euclidean; making it Euclidean using ade4::cailliez")
+        D <- ade4::cailliez(D, print=FALSE)
+      }
     }
     else if(method=="KF"){
       D <- KF.dist(x)
     }
     else if(method=="BHV"){
       D <- dist.multiPhylo(x)
-      ## make the distance Euclidean
-      D <- ade4::cailliez(D, print=FALSE)
+      ## make the distance Euclidean if it isn't already
+      if (!ade4::is.euclid(D))  {
+        warning("Distance matrix is not Euclidean; making it Euclidean using ade4::cailliez")
+        D <- ade4::cailliez(D, print=FALSE)
+      }
     }
 
     ## restore labels
