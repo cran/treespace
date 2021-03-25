@@ -1,4 +1,4 @@
-f5f8a6f9b99f9b5a5ef7bb77ff0a4347 *DESCRIPTION
+1ed566c98ae2b30eef2a8b998f1e7229 *DESCRIPTION
 aeb3d3525f92d4b2ae0659a9d9cb593b *LICENSE
 58595164de22315db2dfb2ca40e66665 *NAMESPACE
 5d2d7b765be5612040ba9a387cddd143 *NEWS.md
@@ -18,7 +18,7 @@ dd6c1e3683a5ae261dfd5b0140079e47 *R/transmissionTrees.R
 556b3536d56a0be37690a8f361755c9e *R/treeConcordance.R
 e8c3b04729ee9f79ae31732e3f0341db *R/treespace.R
 8f8ed11c95e7e565ff5ec778eafae636 *README.md
-89a96ad6ad76d7e4daf1161a1443547b *build/vignette.rds
+ab90564cc59105321d0cefdc7eafdf9c *build/vignette.rds
 b22dd6d8a0aa612718b4cbbd9d4ccf16 *data/DengueBEASTMCC.RData
 bbf91b415237e7ab1114fcf7cc54ad6a *data/DengueSeqs.RData
 bcb388cef1ad20dbc0fbb98ba3812581 *data/DengueTrees.RData
@@ -26,13 +26,13 @@ bcb388cef1ad20dbc0fbb98ba3812581 *data/DengueTrees.RData
 c30fe0c101e1d52f45a2faee4fc7b2de *data/woodmiceTrees.RData
 f04f4f963e9642774e6ae96bfa1b86d9 *inst/CITATION
 ccc0c4eaa5b19a2410959119408352a7 *inst/doc/DengueVignette.Rmd
-19eb27638c0062934f959a004d6daef5 *inst/doc/DengueVignette.html
-1ac6dc5dec9238132db7fe28e94dbc9b *inst/doc/TransmissionTreesVignette.Rmd
-c1c0530819759a19f9c69839e3c250cc *inst/doc/TransmissionTreesVignette.html
+740bb9852556f0af320b9c472fff4376 *inst/doc/DengueVignette.html
+8f0b830cab0b2af3938a2048102d7dad *inst/doc/TransmissionTreesVignette.Rmd
+df32eb1b0a1669cd91016ecf258ed545 *inst/doc/TransmissionTreesVignette.html
 a6ece2a588655a2455c317d9c8369f34 *inst/doc/introduction.Rmd
-19e9945d67274468f45923abeb3f12b3 *inst/doc/introduction.html
+7fdbb728ca95d978d3d90a3afa8a9282 *inst/doc/introduction.html
 59a86954ee2d976dcd7130157d0f0e4f *inst/doc/tipCategories.Rmd
-2a688a8dc3322423b51cf28245a9105f *inst/doc/tipCategories.html
+da149659d6be2fe70e083ea427d2d59e *inst/doc/tipCategories.html
 6d890be7cf87406d84b7c855acede2a3 *inst/shiny/server.R
 244f3ef75e8f6a1a325d980df84d949e *inst/shiny/ui.R
 6c4711607de1791415c5b50511e84ad3 *inst/shiny/www/bootstrap.simplex.css
@@ -70,8 +70,8 @@ a77475898bc5833024c09c0dc37869db *man/wiwMedTree.Rd
 9c74c81eeaf5d8af22cd33dab4daffcc *src/CPP_update_combinations.cpp
 c6831a805f5342deba06265ad41e1fc8 *src/RcppExports.cpp
 4328a6f98f7e19fdb142fa67fac002ec *tests/testthat.R
-eacb3a44ab5ce518d80006c13bc00986 *tests/testthat/testbasics.R
+7532a24c185c5fb4ca1a03a53adf7b90 *tests/testthat/testbasics.R
 ccc0c4eaa5b19a2410959119408352a7 *vignettes/DengueVignette.Rmd
-1ac6dc5dec9238132db7fe28e94dbc9b *vignettes/TransmissionTreesVignette.Rmd
+8f0b830cab0b2af3938a2048102d7dad *vignettes/TransmissionTreesVignette.Rmd
 a6ece2a588655a2455c317d9c8369f34 *vignettes/introduction.Rmd
 59a86954ee2d976dcd7130157d0f0e4f *vignettes/tipCategories.Rmd

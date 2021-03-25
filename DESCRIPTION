@@ -1,7 +1,7 @@
 Package: treespace
 Title: Statistical Exploration of Landscapes of Phylogenetic Trees
-Date: 2020-11-13
-Version: 1.1.4.0
+Date: 2021-03-23
+Version: 1.1.4.1
 Authors@R: c(TJ = person("Thibaut", "Jombart", email="thibautjombart@gmail.com", role = "aut", comment = c(ORCID = "0000-0003-2226-8692")),
  	     MK = person("Michelle", "Kendall", email="michelle.kendall@warwick.ac.uk", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7344-7071")),
 	     JAG = person("Jacob", "Almagro-Garcia", role = "aut", comment = c(ORCID = "0000-0002-0595-7333")),
@@ -30,9 +30,9 @@ URL: https://cran.r-project.org/package=treespace,
         https://github.com/thibautjombart/treespace
 BugReports: https://github.com/thibautjombart/treespace/issues
 NeedsCompilation: yes
-Packaged: 2020-11-17 11:25:13 UTC; michellekendall
+Packaged: 2021-03-23 15:22:23 UTC; michellekendall
 Repository: CRAN
-Date/Publication: 2020-11-17 12:40:06 UTC
+Date/Publication: 2021-03-25 13:30:03 UTC
 Author: Thibaut Jombart [aut] (<https://orcid.org/0000-0003-2226-8692>),
   Michelle Kendall [aut, cre] (<https://orcid.org/0000-0001-7344-7071>),
   Jacob Almagro-Garcia [aut] (<https://orcid.org/0000-0002-0595-7333>),
