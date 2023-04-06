@@ -1,3 +1,13 @@
+treespace v1.1.4.2
+==================
+
+Fixing a bug which was affecting the compilation of vignettes: the `treespace` function can now handle NA row (tree) names. Also added explicit argument calls in unit test functions, updated the citation file to use `bibentry` rather than the old-style `citEntry` as suggested by CRAN, and updated links to authors' websites.
+
+treespace v1.1.4.1
+==================
+
+Fixing a bug which was tripping up our automatic tests: if d is a distance matrix obtained from stats::as.dist() then its i'th element can no longer be accessed with d[[i]] and instead d[i] should be used.
+
 treespace v1.1.4.0
 ==================
 
